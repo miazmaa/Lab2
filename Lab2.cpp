@@ -79,8 +79,8 @@ int main(void)
 			if (ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE)
 				done = true;
 		}
-
-		al_draw_filled_rectangle(pos_x, pos_y, pos_x + 30, pos_y + 30, al_map_rgb(255, 0, 255));
+		int circle_radius = 40;
+		al_draw_filled_circle(pos_x, pos_y, circle_radius, al_map_rgb(255, 0, 255));
 		al_flip_display();
 		al_clear_to_color(al_map_rgb(0, 0, 0));
 	}
