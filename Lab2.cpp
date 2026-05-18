@@ -41,6 +41,7 @@ int main(void)
 
 		if (ev.type == ALLEGRO_EVENT_KEY_DOWN)
 		{
+			//directional keys so the object moves in all directions
 			switch (ev.keyboard.keycode)
 			{
 			case ALLEGRO_KEY_UP:
@@ -80,6 +81,9 @@ int main(void)
 				done = true;
 		}
 		int circle_radius = 40;
+		float line_thickness = 10;
+		//draws the line that will act as pointer. line is centered, but it will always be extended and reaching the circle
+		al_draw_line(width / 2, height / 2, pos_x, pos_y, al_map_rgb(137, 207, 240), line_thickness);
 		al_draw_filled_circle(pos_x, pos_y, circle_radius, al_map_rgb(255, 0, 255));
 		al_flip_display();
 		al_clear_to_color(al_map_rgb(0, 0, 0));
